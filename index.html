@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Temario de Matemáticas Interactivo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    line-height: 1.5;
+  }
+  h1, h2 {
+    text-align: center;
+  }
+  section {
+    margin-bottom: 2rem;
+  }
+  label {
+    cursor: pointer;
+    user-select: none;
+    display: block;
+    padding: 6px 8px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    position: relative;
+  }
+  label:hover {
+    background-color: #eef;
+  }
+  label.selected {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+  }
+  input[type="checkbox"] {
+    margin-right: 0.5rem;
+    transform: scale(1.2);
+    vertical-align: middle;
+  }
+  .progress-bar {
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 1rem 0 2rem 0;
+    height: 30px;
+  }
+  .progress-bar-fill {
+    background: #4caf50;
+    height: 100%;
+    width: 0%;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    transition: width 0.3s ease;
+  }
+</style>
+</head>
+<body>
+
+<h1>📘 Temario de Matemáticas Interactivo</h1>
+
+<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progreso de estudio">
+  <div class="progress-bar-fill" id="progressFill">0%</div>
+</div>
+
+<form id="temarioForm">
+
+  <section>
+    <h2>Álgebra</h2>
+    <label><input type="checkbox" name="algebra-basica" /> Álgebra básica</label>
+    <label><input type="checkbox" name="cantidades-homogeneas" /> Cantidades homogéneas y no homogéneas</label>
+    <label><input type="checkbox" name="cifras-significativas" /> Cifras significativas</label>
+    <label><input type="checkbox" name="combinatoria" /> Combinatoria</label>
+    <label><input type="checkbox" name="divisibilidad-numeros" /> Divisibilidad de los números</label>
+    <label><input type="checkbox" name="division" /> División o Dividir</label>
+    <label><input type="checkbox" name="division-expresiones-algebraicas" /> División de expresiones algebraicas</label>
+    <label><input type="checkbox" name="division-polinomios" /> División de polinomios</label>
+    <label><input type="checkbox" name="division-sintetica" /> División sintética o Regla de Ruffini</label>
+    <label><input type="checkbox" name="factorial" /> Factorial o Función factorial</label>
+    <label><input type="checkbox" name="factorizacion" /> Factorización</label>
+    <label><input type="checkbox" name="lenguaje-algebraico" /> Lenguaje algebraico</label>
+    <label><input type="checkbox" name="multiplicar" /> Multiplicar</label>
+    <label><input type="checkbox" name="multiplicar-expresiones-racionales" /> Multiplicar expresiones algebraicas racionales (con fracciones)</label>
+    <label><input type="checkbox" name="productos-notables" /> Productos notables</label>
+    <label><input type="checkbox" name="reduccion-terminos-semejantes" /> Reducción de términos semejantes</label>
+    <label><input type="checkbox" name="suma-algebraica" /> Suma algebraica</label>
+    <label><input type="checkbox" name="sustraccion-polinomios" /> Sustracción de polinomios</label>
+    <label><input type="checkbox" name="valorizacion-expresiones-algebraicas" /> Valorización de expresiones algebraicas</label>
+  </section>
+
+  <section>
+    <h2>Conjuntos</h2>
+    <label><input type="checkbox" name="conjunto-complementario" /> Conjunto complementario</label>
+    <label><input type="checkbox" name="conjunto-numerico-ecuacion" /> Conjunto numérico de una ecuación</label>
+    <label><input type="checkbox" name="conjuntos-numericos" /> Conjuntos numéricos</label>
+    <label><input type="checkbox" name="teoria-de-conjuntos" /> Conjuntos: Teoría de conjuntos</label>
+    <label><input type="checkbox" name="producto-cartesiano" /> Producto cartesiano</label>
+    <label><input type="checkbox" name="regularidades-numericas" /> Regularidades numéricas</label>
+    <label><input type="checkbox" name="relaciones-funciones" /> Relaciones y funciones</label>
+  </section>
+
+  <section>
+    <h2>Funciones</h2>
+    <label><input type="checkbox" name="dominio-recorrido" /> Dominio y recorrido</label>
+    <label><input type="checkbox" name="conocer-dominio" /> Dominio: conocer dominio en una función</label>
+    <label><input type="checkbox" name="funcion-cuadratica" /> Función cuadrática</label>
+    <label><input type="checkbox" name="funcion-cuadratica-estandar" /> Función cuadrática: de su forma general a estándar</label>
+    <label><input type="checkbox" name="funcion-imagen-preimagen" /> Función: imagen y preimagen</label>
+    <label><input type="checkbox" name="funcion-raiz-cuadrada" /> Función raíz cuadrada</label>
+    <label><input type="checkbox" name="tipos-funciones" /> Función: Tipos de Funciones</label>
+    <label><input type="checkbox" name="conceptos-basicos-funciones" /> Funciones Matemáticas: Conceptos Básicos</label>
+    <label><input type="checkbox" name="limite-funcion" /> Límite de una función</label>
+    <label><input type="checkbox" name="valor-absoluto" /> Valor absoluto: función valor absoluto</label>
+  </section>
+
+  <section>
+    <h2>Ecuaciones e Inecuaciones</h2>
+    <label><input type="checkbox" name="ecuacion-exponencial" /> Ecuación exponencial</label>
+    <label><input type="checkbox" name="ejercicios-exponenciales-01" /> Ecuación exponencial: Ejercicios con ecuaciones exponenciales 01</label>
+    <label><input type="checkbox" name="ejercicios-exponenciales-02" /> Ecuación exponencial: Ejercicios con ecuaciones exponenciales 02</label>
+    <label><input type="checkbox" name="ecuaciones-formato-textual" /> Ecuaciones con formato textual</label>
+    <label><input type="checkbox" name="ayuda-resolver-problemas" /> Ecuaciones: Ayuda para resolver problemas</label>
+    <label><input type="checkbox" name="resolucion-ecuaciones" /> Ecuaciones: Resolución de ecuaciones</label>
+    <label><input type="checkbox" name="clasificacion-ecuaciones" /> Ecuaciones: Clasificación de ecuaciones de acuerdo al grado de la incógnita</label>
+    <label><input type="checkbox" name="coeficientes-ecuacion" /> Ecuaciones: Coeficientes de una ecuación</label>
+    <label><input type="checkbox" name="comprobar-ecuaciones" /> Ecuaciones: Cómo Comprobar ecuaciones</label>
+    <label><input type="checkbox" name="concepto-ecuacion" /> Ecuaciones: Concepto de ecuación</label>
+    <label><input type="checkbox" name="ejercicios-ecuaciones" /> Ecuaciones: Ejercicios con ecuaciones</label>
+    <label><input type="checkbox" name="ecuaciones" /> Ecuaciones</label>
+    <label><input type="checkbox" name="ecuaciones-cuadraticas-binomiales" /> Ecuaciones cuadráticas binomiales</label>
+    <label><input type="checkbox" name="ecuaciones-de-la-parabola" /> Ecuaciones de la parábola</label>
+    <label><input type="checkbox" name="ecuacion-parabola-general" /> Ecuación de la parábola en su forma general</label>
+    <label><input type="checkbox" name="ecuacion-parabola-no-origen" /> Ecuación de la parábola cuyo vértice no está en el origen</label>
+    <label><input type="checkbox" name="cuadro-resumen-parabola" /> Ecuación de la parábola: Cuadro resumen</label>
+    <label><input type="checkbox" name="ecuacion-recta" /> Ecuación de la recta</label>
+    <label><input type="checkbox" name="ecuaciones-segundo-grado" /> Ecuaciones de segundo grado (o cuadráticas)</label>
+    <label><input type="checkbox" name="ecuaciones-fraccionarias-q" /> Ecuaciones fraccionarias (en Q)</label>
+    <label><input type="checkbox" name="ejercicios-ecuaciones-fraccionarias" /> Ecuaciones fraccionarias (en Q): Ejercicios</label>
+    <label><input type="checkbox" name="ecuaciones-lineales-primer-grado" /> Ecuaciones lineales o de primer grado</label>
+    <label><input type="checkbox" name="clasificacion-ecuaciones-lineales" /> Ecuaciones lineales o de primer grado: Clasificación</label>
+    <label><input type="checkbox" name="ecuaciones-literales" /> Ecuaciones literales</label>
+    <label><input type="checkbox" name="propiedades-ecuaciones" /> Ecuaciones: Propiedades de las ecuaciones</label>
+    <label><input type="checkbox" name="sistemas-ecuaciones" /> Ecuaciones: Sistemas de ecuaciones</label>
+    <label><input type="checkbox" name="tipos-ecuaciones" /> Ecuaciones: Tipos de ecuaciones</label>
+    <label><input type="checkbox" name="inecuaciones-lineales" /> Inecuaciones lineales o inecuaciones de primer grado</label>
+    <label><input type="checkbox" name="inecuaciones-lineales-simultaneas" /> Inecuaciones lineales simultáneas</label>
+    <label><input type="checkbox" name="intervalos-inecuaciones-lineales" /> Intervalos e inecuaciones lineales</label>
+    <label><input type="checkbox" name="operaciones-intervalos" /> Intervalos: Operaciones</label>
+    <label><input type="checkbox" name="resolver-ecuaciones" /> Resolver ecuaciones</label>
+  </section>
+
+  <section>
+    <h2>Números y Operaciones</h2>
+    <label><input type="checkbox" name="numero-pi" /> Número Pi</label>
+    <label><input type="checkbox" name="bases-numericas" /> Números: Bases Numéricas</label>
+    <label><input type="checkbox" name="numeros-complejos" /> Números complejos</label>
+    <label><input type="checkbox" name="numeros-decimales" /> Números Decimales</label>
+    <label><input type="checkbox" name="numeros-enteros" /> Números enteros (Z)</label>
+    <label><input type="checkbox" name="numeros-imaginarios" /> Números imaginarios</label>
+    <label><input type="checkbox" name="numeros-primos-compuestos" /> Números Primos y Números compuestos</label>
+    <label><input type="checkbox" name="numeros-irracionales" /> Números irracionales</label>
+    <label><input type="checkbox" name="propiedades-irracionales" /> Números irracionales: Propiedades</label>
+    <label><input type="checkbox" name="numeros-naturales" /> Números Naturales</label>
+    <label><input type="checkbox" name="numeros-reales" /> Números reales</label>
+    <label><input type="checkbox" name="propiedades-reales" /> Números reales: Propiedades</label>
+    <label><input type="checkbox" name="numeros-nos-rodean" /> Números: Los números nos rodean</label>
+    <label><input type="checkbox" name="operaciones-combinadas" /> Operaciones combinadas</label>
+    <label><input type="checkbox" name="operaciones-con-decimales" /> Operaciones con decimales</label>
+    <label><input type="checkbox" name="operaciones-multiplos-10" /> Operaciones con múltiplos de 10</label>
+    <label><input type="checkbox" name="operadores-matematicos" /> Operadores matemáticos</label>
+    <label><input type="checkbox" name="producto-cartesiano-numeros" /> Producto cartesiano con números</label>
+    <label><input type="checkbox" name="propiedades-operaciones-basicas" /> Propiedades de las operaciones básicas</label>
+    <label><input type="checkbox" name="propiedades-numericas" /> Propiedades numéricas</label>
+    <label><input type="checkbox" name="propiedades-numeros" /> Propiedades de los números</label>
+    <label><input type="checkbox" name="propiedades-numeros-1" /> Propiedades de los números 1</label>
+    <label><input type="checkbox" name="sistema-numeracion" /> Sistema de numeración</label>
+  </section>
+
+  <section>
+    <h2>Polinomios</h2>
+    <label><input type="checkbox" name="grado-polinomios" /> Grado de polinomios</label>
+    <label><input type="checkbox" name="polinomios-division" /> Polinomios: División</label>
+    <label><input type="checkbox" name="polinomios" /> Polinomios</label>
+    <label><input type="checkbox" name="propiedades-polinomios" /> Propiedades de los polinomios</label>
+  </section>
+
+  <section>
+    <h2>Probabilidad y Estadística</h2>
+    <label><input type="checkbox" name="estadistica" /> Estadística</label>
+    <label><input type="checkbox" name="experimentos-probabilisticos" /> Experimentos probabilísticos</label>
+    <label><input type="checkbox" name="frecuencia-probabilistica" /> Frecuencia probabilística</label>
+    <label><input type="checkbox" name="frecuencia-relativa" /> Frecuencia relativa</label>
+    <label><input type="checkbox" name="grafica-pastel" /> Gráfica pastel</label>
+    <label><input type="checkbox" name="media-aritmetica" /> Media aritmética</label>
+    <label><input type="checkbox" name="media-ponderada" /> Media ponderada</label>
+    <label><input type="checkbox" name="moda" /> Moda</label>
+    <label><input type="checkbox" name="probabilidad" /> Probabilidad</label>
+    <label><input type="checkbox" name="probabilidad-evento" /> Probabilidad de un evento</label>
+    <label><input type="checkbox" name="probabilidad-compuesta" /> Probabilidad compuesta</label>
+    <label><input type="checkbox" name="probabilidad-condicionada" /> Probabilidad condicionada</label>
+    <label><input type="checkbox" name="probabilidad-sucesion" /> Probabilidad y sucesión</label>
+    <label><input type="checkbox" name="probabilidad-sucesiones" /> Probabilidades y sucesiones</label>
+  </section>
+
+  <section>
+    <h2>Razonamiento Lógico</h2>
+    <label><input type="checkbox" name="raciocinio-logico" /> Raciocinio lógico</label>
+    <label><input type="checkbox" name="razonamiento-abstracto" /> Razonamiento abstracto</label>
+    <label><input type="checkbox" name="resolucion-problemas" /> Resolución de problemas</label>
+    <label><input type="checkbox" name="tipos-razonamiento" /> Tipos de razonamiento</label>
+  </section>
+
+  <section>
+    <h2>Sucesiones y Series</h2>
+    <label><input type="checkbox" name="razonamiento-sucesiones" /> Razonamiento de sucesiones</label>
+    <label><input type="checkbox" name="sucesiones" /> Sucesiones</label>
+    <label><input type="checkbox" name="sucesiones-aritmeticas" /> Sucesiones aritméticas</label>
+    <label><input type="checkbox" name="sucesiones-geometricas" /> Sucesiones geométricas</label>
+    <label><input type="checkbox" name="series" /> Series</label>
+    <label><input type="checkbox" name="series-aritmeticas" /> Series aritméticas</label>
+    <label><input type="checkbox" name="series-geometricas" /> Series geométricas</label>
+  </section>
+
+  <section>
+    <h2>Trigonometría</h2>
+    <label><input type="checkbox" name="funciones-trigonometricas" /> Funciones trigonométricas</label>
+    <label><input type="checkbox" name="funciones-trigonometricas-trig" /> Funciones trigonométricas</label>
+    <label><input type="checkbox" name="funciones-trigonometricas-trig-2" /> Funciones trigonométricas</label>
+    <label><input type="checkbox" name="funcion-trigonometrica" /> Función trigonométrica</label>
+    <label><input type="checkbox" name="funcion-trigonometrica-seno" /> Función trigonométrica seno</label>
+    <label><input type="checkbox" name="funcion-trigonometrica-coseno" /> Función trigonométrica coseno</label>
+    <label><input type="checkbox" name="funcion-trigonometrica-tangente" /> Función trigonométrica tangente</label>
+    <label><input type="checkbox" name="funcion-trigonometrica-cotangente" /> Función trigonométrica cotangente</label>
+    <label><input type="checkbox" name="funcion-trigonometrica-secante" /> Función trigonométrica secante</label>
+    <label><input type="checkbox" name="funcion-trigonometrica-cosecante" /> Función trigonométrica cosecante</label>
+  </section>
+
+</form>
+
+<script>
+  const form = document.getElementById('temarioForm');
+  const progressFill = document.getElementById('progressFill');
+  const STORAGE_KEY = 'temario-matematicas-progreso';
+
+  function saveProgress() {
+    const data = {};
+    for (const input of form.elements) {
+      if (input.type === 'checkbox') {
+        data[input.name] = input.checked;
+      }
+    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    updateProgress();
+  }
+
+  function loadProgress() {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (!saved) return;
+    const data = JSON.parse(saved);
+    for (const input of form.elements) {
+      if (input.type === 'checkbox' && data[input.name] !== undefined) {
+        input.checked = data[input.name];
+      }
+    }
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const checkboxes = Array.from(form.querySelectorAll('input[type="checkbox"]'));
+    const total = checkboxes.length;
+    const completed = checkboxes.filter(cb => cb.checked).length;
+    const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
+    progressFill.style.width = percent + '%';
+    progressFill.textContent = percent + '%';
+    progressFill.parentElement.setAttribute('aria-valuenow', percent);
+  }
+
+  form.addEventListener('change', saveProgress);
+
+  // Función para manejar clic en label y redirigir
+  form.addEventListener('click', function(event) {
+    let target = event.target;
+
+    if (target.tagName.toLowerCase() === 'input' && target.type === 'checkbox') {
+      return;
+    }
+
+    while (target && target.tagName.toLowerCase() !== 'label') {
+      target = target.parentElement;
+    }
+    if (!target) return;
+
+    const input = target.querySelector('input[type="checkbox"]');
+    if (!input) return;
+
+    const labels = form.querySelectorAll('label');
+    labels.forEach(l => l.classList.remove('selected'));
+
+    target.classList.add('selected');
+
+    input.checked = true;
+    saveProgress();
+
+    const pageUrl = input.name + '.html';
+
+    setTimeout(() => {
+      window.location.href = pageUrl;
+    }, 100);
+  });
+
+  loadProgress();
+</script>
+
+</body>
+</html>
